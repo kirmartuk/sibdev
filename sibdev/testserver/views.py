@@ -29,7 +29,7 @@ def get(request):
 
 @api_view(('POST',))
 def post(request):
-    file = request.FILES['deal']
+    file = request.FILES['deals']
     data_set = file.read().decode('UTF-8')
     if not file.name.endswith('.csv'):
         return Response({'Desc': 'you send not scv file'}, status=status.HTTP_418_IM_A_TEAPOT)
